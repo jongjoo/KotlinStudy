@@ -1,8 +1,22 @@
 package com.example.new_kotlin
 
 import org.junit.jupiter.api.Test
+import org.springframework.boot.test.context.SpringBootTest
 
-class StaticClassTest private constructor(
+@SpringBootTest
+class StaticClassTest {
+
+    val staticClaTest = StaticClaTest;
+
+    @Test
+    fun staticTest() {
+//        staticClaTest.create()
+        println(staticClaTest.create("123"))
+        println(staticClaTest.DEFAULT_NAME)
+    }
+}
+
+class StaticClaTest private constructor(
     val name: String = DEFAULT_NAME
 ) {
 
@@ -11,21 +25,14 @@ class StaticClassTest private constructor(
     * ex java. public static final int aa = 0;
     * */
     companion object {
-        fun create(): MappingService = MappingService()
+//        fun create(): MappingService = MappingService()
 
-        private fun MappingService(): MappingService {
-            return create()
-        }
+        fun create(name: String): StaticClaTest = StaticClaTest(name)
 
-        fun create(name: String): MappingService = MappingService(name)
+        const val DEFAULT_NAME: String = "jj"
 
-        const val DEFAULT_NAME: String = "sabardada"
     }
 
-    @Test
-    fun staticTest(){
-        println(create("123"))
-    }
 }
 /*
 const 키워드를 통해 컴파일 타임 상수를 만들어낼 수 있습니다.
