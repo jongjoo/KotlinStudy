@@ -13,7 +13,6 @@ class NPETest {
     * Java와 상호 작용
     * */
 
-
     @Test
     fun funNPETest() {
         var name = "jj"
@@ -44,6 +43,6 @@ class NPETest {
         * val name = outterEntity!!.innerEntity!!.name // java.lang.NullPointerException
         * */
 
-        
+
     }
 }
