@@ -1,5 +1,7 @@
 package com.example.new_kotlin
 
+import org.junit.jupiter.api.Test
+
 class OperatorTest {
 
     /*
@@ -18,4 +20,22 @@ class OperatorTest {
 
     https://sabarada.tistory.com/174?category=941106 참고.
     * */
+
+
+    // data
+    val ttdata = Testdata("name", 20)
+    @Test
+    fun dataTest(){
+        println(ttdata.name)
+        ttdata.age = 1
+        println(ttdata.age)
+        println(ttdata.adr)
+    }
+}
+
+data class Testdata(
+    val name: String,
+    var age: Int,
+){
+    val adr: String = "what"
 }
